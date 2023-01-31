@@ -50,15 +50,30 @@ all_companies = Company.all
 
 cali_companies = Company.where({"state" => "California"})
 
-puts "cali companies: #{cali_companies.count}"
+#puts "cali companies: #{cali_companies.count}"
 
 # 4. query companies table to find single row for Apple
 
 apple = Company.find_by({"name" => "Apple"})
-puts apple["url"]
+#puts apple["url"]
 
 # 5. read a row's column value
 
 # 6. update a row's column value
 
+amazon = Company.find_by({"name" => "Amazon"})
+#puts amazon.inspect
+amazon["url"] = "https://amazon.com"
+amazon.save
+#puts amazon.inspect
+
+
 # 7. delete a row
+
+
+twitter = Company.find_by({"name" => "Twitter"})
+puts twitter.inspect
+twitter.destroy
+
+twitter = Company.find_by({"name" => "Twitter"})
+puts twitter.inspect
